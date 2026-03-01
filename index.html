@@ -228,7 +228,7 @@
     .section-title {
       font-family: 'Playfair Display', serif;
       font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 700;
+      font-weight: 900;
       line-height: 1.15;
       color: var(--black);
       margin-bottom: 2.5rem;
@@ -393,10 +393,31 @@
       align-items: center;
     }
 
-    .lecturer-img {
-      width: 100%;
+    .lecturer-photos {
+      position: relative;
+      height: 380px;
+    }
+
+    .lecturer-photo-back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 62%;
+      height: auto;
       border-radius: 4px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      object-fit: cover;
+    }
+
+    .lecturer-photo-front {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 68%;
+      height: auto;
+      border-radius: 4px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+      object-fit: cover;
     }
 
     .lecturer-meta {
@@ -663,7 +684,10 @@
       <h2 class="section-title">Executive Guest Lecturer</h2>
       <div class="lecturer-layout">
         <div class="fade-in">
-          <img src="guest-lecturer.png" alt="Robert Kabus at Chulalongkorn Business School" class="lecturer-img" />
+          <div class="lecturer-photos">
+            <img src="lecturer-classroom.png" alt="Classroom at Chulalongkorn" class="lecturer-photo-back" />
+            <img src="lecturer-group.png" alt="Robert Kabus with students" class="lecturer-photo-front" />
+          </div>
         </div>
         <div class="fade-in">
           <div class="lecturer-meta">Chulalongkorn Business School / Bangkok, Thailand</div>
