@@ -20,7 +20,6 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -30,7 +29,7 @@
       overflow-x: hidden;
     }
 
-    /* ───── NAV ───── */
+    /* ── NAV ── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -42,14 +41,12 @@
       background: rgba(248, 246, 242, 0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(0,0,0,0.06);
-      transition: background 0.3s;
     }
 
     .nav-logo {
       font-family: 'Playfair Display', serif;
       font-size: 1.15rem;
       font-weight: 700;
-      letter-spacing: 0.01em;
       color: var(--black);
       text-decoration: none;
     }
@@ -69,10 +66,9 @@
       text-decoration: none;
       transition: color 0.2s;
     }
-
     .nav-links a:hover { color: var(--teal); }
 
-    /* ───── HERO ───── */
+    /* ── HERO ── */
     #home {
       min-height: 100vh;
       display: flex;
@@ -82,7 +78,6 @@
       padding: 7rem 2rem 5rem;
       text-align: center;
       position: relative;
-      overflow: hidden;
     }
 
     #home::before {
@@ -113,7 +108,7 @@
     }
 
     .hero-photo-wrap {
-      width: min(340px, 72vw);
+      width: min(280px, 65vw);
       margin: 0 auto 2.5rem;
       position: relative;
     }
@@ -132,7 +127,6 @@
       width: 100%;
       display: block;
       border-radius: 3px;
-      position: relative;
     }
 
     .hero-tagline {
@@ -154,7 +148,6 @@
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
       padding: 0.75rem 1.8rem;
       border-radius: 3px;
       font-size: 0.82rem;
@@ -163,24 +156,60 @@
       text-transform: uppercase;
       text-decoration: none;
       transition: all 0.25s;
+      cursor: pointer;
     }
 
-    .btn-primary {
-      background: var(--teal);
-      color: #fff;
-    }
+    .btn-primary { background: var(--teal); color: #fff; }
     .btn-primary:hover { background: var(--teal-dark); transform: translateY(-2px); }
 
-    .btn-outline {
-      border: 1.5px solid var(--teal);
-      color: var(--teal);
-    }
+    .btn-outline { border: 1.5px solid var(--teal); color: var(--teal); }
     .btn-outline:hover { background: var(--teal); color: #fff; transform: translateY(-2px); }
 
-    /* ───── SECTIONS ───── */
-    section {
-      padding: 6rem 2rem;
+    /* ── OVERVIEW CARDS ── */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--warm-gray);
+      border: 1.5px solid var(--warm-gray);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-top: 5rem;
+      width: 100%;
+      max-width: 1100px;
     }
+
+    .overview-card {
+      background: var(--off-white);
+      padding: 1.8rem 1.5rem;
+      text-decoration: none;
+      transition: background 0.2s;
+      display: block;
+      overflow: hidden;
+    }
+    .overview-card:hover { background: #fff; }
+
+    .overview-card-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 3px;
+      margin-bottom: 1rem;
+      transition: transform 0.4s ease;
+    }
+    .overview-card:hover .overview-card-img { transform: scale(1.02); }
+
+    .overview-card-title {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 6rem 2rem; }
 
     .container {
       max-width: 1100px;
@@ -205,100 +234,13 @@
       margin-bottom: 2.5rem;
     }
 
-    /* ───── OVERVIEW CARDS ───── */
-    .overview-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5px;
-      background: var(--warm-gray);
-      border: 1.5px solid var(--warm-gray);
-      border-radius: 6px;
-      overflow: hidden;
-    }
-
-    .overview-card {
-      background: var(--off-white);
-      padding: 2.5rem 2rem;
-      text-decoration: none;
-      transition: background 0.2s;
-      display: block;
-    }
-
-    .overview-card:hover { background: #fff; }
-
-    .overview-card-img {
-      width: 100%;
-      aspect-ratio: 16/9;
-      object-fit: cover;
-      border-radius: 3px;
-      margin-bottom: 1.2rem;
-      transition: transform 0.4s ease;
-    }
-
-    .overview-card:hover .overview-card-img { transform: scale(1.02); }
-
-    .overview-card-title {
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--mid-gray);
-    }
-
-    /* ───── BELIEFS SECTION ───── */
-    #beliefs {
-      background: #fff;
-    }
-
-    .beliefs-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-    }
-
-    .beliefs-text p {
-      font-size: 1rem;
-      font-weight: 300;
-      line-height: 1.8;
-      color: #444;
-      margin-bottom: 1.2rem;
-    }
-
-    .beliefs-photos {
-      position: relative;
-      height: 420px;
-    }
-
-    .beliefs-photo-1,
-    .beliefs-photo-2 {
-      position: absolute;
-      border-radius: 4px;
-      object-fit: cover;
-    }
-
-    .beliefs-photo-1 {
-      width: 65%;
-      top: 0; left: 0;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
-    }
-
-    .beliefs-photo-2 {
-      width: 65%;
-      bottom: 0; right: 0;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
-    }
-
-    /* ───── CAREER ───── */
-    #career {
-      background: var(--off-white);
-    }
+    /* ── CAREER ── */
+    #career { background: #fff; }
 
     .career-intro {
       max-width: 800px;
       margin-bottom: 3.5rem;
     }
-
     .career-intro p {
       font-size: 1rem;
       font-weight: 300;
@@ -335,74 +277,21 @@
     .logo-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 0.6rem;
       align-items: center;
-      margin-bottom: 1.5rem;
     }
 
     .logo-item {
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       font-weight: 500;
       color: #444;
-      padding: 0.3rem 0.7rem;
+      padding: 0.25rem 0.65rem;
       background: var(--warm-gray);
       border-radius: 3px;
-      letter-spacing: 0.03em;
     }
 
-    /* ───── CASES ───── */
-    #cases {
-      background: #fff;
-    }
-
-    .cases-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2.5rem;
-    }
-
-    .case-card {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .case-brand {
-      font-size: 1.1rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      color: var(--black);
-      margin-bottom: 0.5rem;
-    }
-
-    .case-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      line-height: 1.35;
-      color: var(--teal-dark);
-      margin-bottom: 1rem;
-    }
-
-    .case-body {
-      font-size: 0.88rem;
-      font-weight: 300;
-      line-height: 1.75;
-      color: #555;
-    }
-
-    .case-divider {
-      width: 2.5rem;
-      height: 2px;
-      background: var(--teal-light);
-      margin-bottom: 1rem;
-    }
-
-    /* ───── ROLES ───── */
-    #roles {
-      background: var(--black);
-      color: var(--off-white);
-    }
-
+    /* ── ROLES ── */
+    #roles { background: var(--black); color: var(--off-white); }
     #roles .section-title { color: var(--off-white); }
     #roles .section-label { color: var(--teal-light); }
 
@@ -419,11 +308,7 @@
       padding: 2rem 1.75rem;
       transition: border-color 0.25s, transform 0.25s;
     }
-
-    .role-card:hover {
-      border-color: var(--teal);
-      transform: translateY(-4px);
-    }
+    .role-card:hover { border-color: var(--teal); transform: translateY(-4px); }
 
     .role-num {
       font-family: 'Playfair Display', serif;
@@ -453,15 +338,53 @@
 
     .role-positions {
       font-size: 0.78rem;
-      font-weight: 400;
       color: var(--teal-light);
       font-style: italic;
     }
 
-    /* ───── GUEST LECTURER ───── */
-    #lecturer {
-      background: var(--off-white);
+    /* ── CASES ── */
+    #cases { background: var(--off-white); }
+
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
     }
+
+    .case-card { display: flex; flex-direction: column; }
+
+    .case-brand {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 0.5rem;
+    }
+
+    .case-divider {
+      width: 2.5rem;
+      height: 2px;
+      background: var(--teal-light);
+      margin-bottom: 1rem;
+    }
+
+    .case-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--teal-dark);
+      margin-bottom: 1rem;
+    }
+
+    .case-body {
+      font-size: 0.88rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: #555;
+    }
+
+    /* ── GUEST LECTURER ── */
+    #lecturer { background: #fff; }
 
     .lecturer-layout {
       display: grid;
@@ -470,27 +393,9 @@
       align-items: center;
     }
 
-    .lecturer-photos {
-      position: relative;
-      height: 360px;
-    }
-
-    .lecturer-photo-1,
-    .lecturer-photo-2 {
-      position: absolute;
+    .lecturer-img {
+      width: 100%;
       border-radius: 4px;
-      object-fit: cover;
-    }
-
-    .lecturer-photo-1 {
-      width: 70%;
-      top: 0; left: 0;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    }
-
-    .lecturer-photo-2 {
-      width: 55%;
-      bottom: 0; right: 0;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
 
@@ -517,9 +422,34 @@
       font-weight: 300;
       line-height: 1.8;
       color: #555;
+      margin-bottom: 1rem;
     }
 
-    /* ───── FOOTER ───── */
+    /* ── BELIEFS ── */
+    #beliefs { background: var(--off-white); }
+
+    .beliefs-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .beliefs-text p {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: #444;
+      margin-bottom: 1.2rem;
+    }
+
+    .beliefs-img {
+      width: 100%;
+      border-radius: 4px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+    }
+
+    /* ── FOOTER ── */
     footer {
       background: var(--black);
       color: #666;
@@ -527,7 +457,7 @@
       text-align: center;
     }
 
-    footer .footer-name {
+    .footer-name {
       font-family: 'Playfair Display', serif;
       font-size: 1.5rem;
       font-weight: 700;
@@ -535,34 +465,23 @@
       margin-bottom: 0.5rem;
     }
 
-    footer p {
-      font-size: 0.82rem;
-      letter-spacing: 0.05em;
-    }
+    footer p { font-size: 0.82rem; letter-spacing: 0.05em; }
+    footer a { color: var(--teal-light); text-decoration: none; }
 
-    footer a {
-      color: var(--teal-light);
-      text-decoration: none;
-    }
-
-    /* ───── FADE-IN ───── */
+    /* ── FADE IN ── */
     .fade-in {
       opacity: 0;
       transform: translateY(24px);
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
-    .fade-in.visible {
-      opacity: 1;
-      transform: none;
-    }
+    .fade-in.visible { opacity: 1; transform: none; }
 
-    /* ───── RESPONSIVE ───── */
+    /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       nav { padding: 1rem 1.5rem; }
-      .nav-links { gap: 1.5rem; }
-      .beliefs-layout, .lecturer-layout, .career-cols { grid-template-columns: 1fr; gap: 2.5rem; }
+      .nav-links { gap: 1.2rem; }
       .overview-grid, .roles-grid, .cases-grid { grid-template-columns: 1fr; }
-      .beliefs-photos, .lecturer-photos { height: 280px; }
+      .career-cols, .beliefs-layout, .lecturer-layout { grid-template-columns: 1fr; gap: 2.5rem; }
       section { padding: 4rem 1.5rem; }
     }
 
@@ -579,15 +498,15 @@
     <a href="#home" class="nav-logo">Robert Kabus</a>
     <ul class="nav-links">
       <li><a href="#home">Home</a></li>
-      <li><a href="#beliefs">Beliefs</a></li>
       <li><a href="#career">Career</a></li>
-      <li><a href="#cases">Cases</a></li>
       <li><a href="#roles">Roles</a></li>
+      <li><a href="#cases">Cases</a></li>
       <li><a href="#lecturer">Teaching</a></li>
+      <li><a href="#beliefs">Beliefs</a></li>
     </ul>
   </nav>
 
-  <!-- HERO -->
+  <!-- HOME / HERO -->
   <section id="home">
     <div class="hero-eyebrow">Professional Profile</div>
     <h1 class="hero-name">Robert Kabus</h1>
@@ -602,43 +521,19 @@
       <a href="https://linkedin.com" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn ↗</a>
     </div>
 
-    <!-- Section preview cards -->
-    <div class="container" style="margin-top: 5rem; width: 100%;">
-      <div class="overview-grid fade-in">
-        <a href="#career" class="overview-card">
-          <img src="career-experiences.png" alt="Career Experiences" class="overview-card-img" />
-          <div class="overview-card-title">Career Experiences</div>
-        </a>
-        <a href="#roles" class="overview-card">
-          <img src="roles-responsibilities.png" alt="Roles & Skills" class="overview-card-img" />
-          <div class="overview-card-title">Roles &amp; Skills</div>
-        </a>
-        <a href="#beliefs" class="overview-card">
-          <img src="beliefs-approach.png" alt="Beliefs & Approach" class="overview-card-img" />
-          <div class="overview-card-title">Beliefs &amp; Approach</div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- BELIEFS & APPROACH -->
-  <section id="beliefs">
-    <div class="container">
-      <div class="section-label">Philosophy</div>
-      <h2 class="section-title">…Beliefs &amp; Approach</h2>
-      <div class="beliefs-layout">
-        <div class="beliefs-text fade-in">
-          <h3 style="font-family:'Playfair Display',serif; font-size:1.2rem; color:var(--teal-dark); margin-bottom:1rem; font-weight:700; letter-spacing:0.05em; text-transform:uppercase;">Culture</h3>
-          <p>We all live in competitive environments with no easy road to success. The difference usually comes down to a winning culture. It's the key to identifying, addressing and overcoming the inevitable challenges along the way.</p>
-          <p>Brand building is at the heart of this. The ability to create a shared sense of mission where everyone is inspired to put their individual talents towards the collective good. It might sound a bit soft, but time and time again, it's been the foundation of great work with outsized results.</p>
-          <p>I'm currently in Bangkok where we've been growing our startup across Southeast Asia. Next we'll be returning home to Sausalito, CA where our kids, community and floating home all reside.</p>
-          <a href="https://linkedin.com" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top:0.5rem;">LinkedIn ↗</a>
-        </div>
-        <div class="beliefs-photos fade-in">
-          <!-- Using the beliefs section screenshot cropped to show the two photos concept -->
-          <img src="beliefs-approach.png" alt="Robert Kabus" class="beliefs-photo-1" style="width:100%; height:100%; object-fit:cover; position:static; box-shadow: 0 12px 40px rgba(0,0,0,0.12); border-radius:4px;" />
-        </div>
-      </div>
+    <div class="overview-grid fade-in">
+      <a href="#career" class="overview-card">
+        <img src="career-experiences.png" alt="Career Experiences" class="overview-card-img" />
+        <div class="overview-card-title">Career Experiences</div>
+      </a>
+      <a href="#roles" class="overview-card">
+        <img src="roles-responsibilities.png" alt="Roles & Skills" class="overview-card-img" />
+        <div class="overview-card-title">Roles &amp; Skills</div>
+      </a>
+      <a href="#beliefs" class="overview-card">
+        <img src="beliefs-approach.png" alt="Beliefs & Approach" class="overview-card-img" />
+        <div class="overview-card-title">Beliefs &amp; Approach</div>
+      </a>
     </div>
   </section>
 
@@ -656,30 +551,18 @@
           <div class="career-col-title">Brands</div>
           <p class="career-col-text">Every brand challenge is unique: from startups to disruptors to market leaders. But there are timeless truths that underpin all success stories. The often overlooked magic of brand building is the value of aligning internal teams to achieve external success. Even great strategies fail to deliver unless they're embraced across the organization.</p>
           <div class="logo-grid">
-            <span class="logo-item">Microsoft</span>
-            <span class="logo-item">P&amp;G</span>
-            <span class="logo-item">Virgin America</span>
-            <span class="logo-item">Porsche</span>
-            <span class="logo-item">Honda</span>
-            <span class="logo-item">Google</span>
-            <span class="logo-item">Apple</span>
-            <span class="logo-item">AMD</span>
-            <span class="logo-item">Got Milk?</span>
-            <span class="logo-item">Mitsubishi</span>
-            <span class="logo-item">Facebook</span>
-            <span class="logo-item">NBA</span>
-            <span class="logo-item">adidas</span>
-            <span class="logo-item">Oakley</span>
-            <span class="logo-item">20th Century</span>
-            <span class="logo-item">Warner Bros.</span>
-            <span class="logo-item">Dignity Health</span>
-            <span class="logo-item">Morgan Stanley</span>
-            <span class="logo-item">UnionBank</span>
-            <span class="logo-item">harman/kardon</span>
-            <span class="logo-item">essentia</span>
-            <span class="logo-item">IHOP</span>
-            <span class="logo-item">Pizza Hut</span>
-            <span class="logo-item">Norwegian Cruise</span>
+            <span class="logo-item">Microsoft</span><span class="logo-item">P&amp;G</span>
+            <span class="logo-item">Virgin America</span><span class="logo-item">Porsche</span>
+            <span class="logo-item">Honda</span><span class="logo-item">Google</span>
+            <span class="logo-item">Apple</span><span class="logo-item">AMD</span>
+            <span class="logo-item">Got Milk?</span><span class="logo-item">Mitsubishi</span>
+            <span class="logo-item">Facebook</span><span class="logo-item">NBA</span>
+            <span class="logo-item">adidas</span><span class="logo-item">Oakley</span>
+            <span class="logo-item">20th Century</span><span class="logo-item">Warner Bros.</span>
+            <span class="logo-item">Dignity Health</span><span class="logo-item">Morgan Stanley</span>
+            <span class="logo-item">UnionBank</span><span class="logo-item">harman/kardon</span>
+            <span class="logo-item">essentia</span><span class="logo-item">IHOP</span>
+            <span class="logo-item">Pizza Hut</span><span class="logo-item">Norwegian Cruise</span>
             <span class="logo-item">DHL</span>
           </div>
         </div>
@@ -687,21 +570,59 @@
           <div class="career-col-title">Companies</div>
           <p class="career-col-text">My belief in holistic brand impact has led me to leadership roles across top tier creative, media, strategy, research and integrated marketing agencies. This has enabled me to drive integrated solutions from both my strategic roles (such as Chief Strategy Officer; Global Head of Strategy) and commercial positions (such as Global CEO; Managing Partner; Chief Growth Officer).</p>
           <div class="logo-grid">
-            <span class="logo-item">OmnicomGroup</span>
-            <span class="logo-item">IPG</span>
-            <span class="logo-item">Grey</span>
-            <span class="logo-item">IPG Mediabrands</span>
-            <span class="logo-item">Dentsu Aegis</span>
-            <span class="logo-item">GS&amp;P</span>
-            <span class="logo-item">Universal McCann</span>
-            <span class="logo-item">Leagas Delaney</span>
-            <span class="logo-item">McCann-Erickson</span>
-            <span class="logo-item">BPN</span>
-            <span class="logo-item">Promontory</span>
-            <span class="logo-item">Carat</span>
-            <span class="logo-item">Vizeum</span>
-            <span class="logo-item">Dataxet</span>
+            <span class="logo-item">OmnicomGroup</span><span class="logo-item">IPG</span>
+            <span class="logo-item">Grey</span><span class="logo-item">IPG Mediabrands</span>
+            <span class="logo-item">Dentsu Aegis</span><span class="logo-item">GS&amp;P</span>
+            <span class="logo-item">Universal McCann</span><span class="logo-item">Leagas Delaney</span>
+            <span class="logo-item">McCann-Erickson</span><span class="logo-item">BPN</span>
+            <span class="logo-item">Promontory</span><span class="logo-item">Carat</span>
+            <span class="logo-item">Vizeum</span><span class="logo-item">Dataxet</span>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROLES & RESPONSIBILITIES -->
+  <section id="roles">
+    <div class="container">
+      <div class="section-label">Expertise</div>
+      <h2 class="section-title">Roles &amp; Responsibilities</h2>
+      <div class="roles-grid">
+        <div class="role-card fade-in">
+          <div class="role-num">01</div>
+          <div class="role-title">Media Strategy &amp; Planning</div>
+          <p class="role-body">Started my career at Grey Advertising New York and went on to running agency global, regional and domestic media operations for brands across sectors including tech, sports, entertainment, packaged goods, healthcare, financial and food &amp; beverage.</p>
+          <div class="role-positions">Director of Media Planning, Head of Media, Managing Director</div>
+        </div>
+        <div class="role-card fade-in">
+          <div class="role-num">02</div>
+          <div class="role-title">Advertising &amp; Creative Strategy</div>
+          <p class="role-body">I added Account Planning to my responsibilities, utilizing consumer, syndicated and quantitative methodologies to drive campaign strategy and activation. I pioneered roles integrating creative and media strategy to help reinvent how agencies delivered value.</p>
+          <div class="role-positions">Partner / Head of Strategy, EVP Strategy</div>
+        </div>
+        <div class="role-card fade-in">
+          <div class="role-num">03</div>
+          <div class="role-title">Brand Strategy</div>
+          <p class="role-body">My work in this area focused on integrating brand value more broadly across organizations. For brands like Microsoft and adidas, this helped unlock transformative value for their businesses. For early stage companies, aligned brand thinking has helped drive differentiation, growth and operating efficiencies at scale.</p>
+          <div class="role-positions">Chief Strategy Officer, CMO</div>
+        </div>
+        <div class="role-card fade-in">
+          <div class="role-num">04</div>
+          <div class="role-title">Business &amp; Operations Leadership</div>
+          <p class="role-body">I have led both independent agencies as well as operations for global networks. For Aegis, I helped start-up the office supporting 20th Century Studios. As Global CEO of IPG's BPN, I led the transformation from traditional media agency to modern communication consultancy while surpassing annual financial targets.</p>
+          <div class="role-positions">Global CEO, Co-Founder/Managing Partner, President</div>
+        </div>
+        <div class="role-card fade-in">
+          <div class="role-num">05</div>
+          <div class="role-title">Oversight &amp; Governance</div>
+          <p class="role-body">In a number of roles, I have been invited to participate on company boards to help drive growth. For Aegis, I was on the Global Products &amp; Services Board as we elevated the offering to become greater business partners with clients. I have also served on APAC Exec Boards for Aegis and Dataxet.</p>
+        </div>
+        <div class="role-card fade-in">
+          <div class="role-num">06</div>
+          <div class="role-title">Research &amp; Analytics</div>
+          <p class="role-body">Oversaw Aegis' SPI division in Asia Pacific responsible for market mix modeling. At present, as Co-founder and Managing Partner at Dataxet, I lead research and development of AI-enabled product to deliver media intelligence solutions to enterprise and government customers.</p>
+          <div class="role-positions">President/Global Head of Strategy, Chief Insight Officer</div>
         </div>
       </div>
     </div>
@@ -713,98 +634,62 @@
       <div class="section-label">Work</div>
       <h2 class="section-title">Cases &amp; Capabilities</h2>
       <div class="cases-grid">
-
         <div class="case-card fade-in">
           <div class="case-brand">Microsoft</div>
           <div class="case-divider"></div>
           <div class="case-title">From Anti-trust Target to Customer-Centric Brand</div>
           <p class="case-body">Microsoft was viewed as a monopoly in the early 2000's, with few friends in the tech industry or government. As global strategy lead across creative and media, my role was to create a campaign approach that would shift their brand perceptions to create a more favorable regulatory and consumer environment. The resulting "Your Potential is Our Passion" campaign quickly went from regional to U.S. to 22 global markets — a significant revenue catalyst for McCann-Worldgroup.</p>
         </div>
-
         <div class="case-card fade-in">
           <div class="case-brand">adidas</div>
           <div class="case-divider"></div>
           <div class="case-title">Bringing a Famous Brand Back from Hard Times</div>
           <p class="case-body">There was a time when adidas was in danger of having to leave the U.S. market. Our approach was to redefine the category from <em>Nike and Nike imitators</em> to Nike and adidas. Our "Long Live Sport" campaign tapped into the variety of ways every athlete celebrates participation and achievement. Within one year, adidas had risen to clear #2 — a new, lucrative status in consumer and sport culture.</p>
         </div>
-
         <div class="case-card fade-in">
           <div class="case-brand">essentia · GiftNow · Blue Nile · Virgin America</div>
           <div class="case-divider"></div>
           <div class="case-title">Helping Growth Stage Companies Gain Brand Value</div>
           <p class="case-body">Early stage companies present unique brand challenges. They're up against established competitors who have claimed profitable market positions. Success often relies on approaching these challenges as category creation instead of just brand positioning. Virgin America changed the air travel category to hospitality &amp; entertainment. Blue Nile reimagined jewelry as an experience for the male buyer.</p>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ROLES & RESPONSIBILITIES -->
-  <section id="roles">
-    <div class="container">
-      <div class="section-label">Expertise</div>
-      <h2 class="section-title">Roles &amp; Responsibilities</h2>
-      <div class="roles-grid">
-
-        <div class="role-card fade-in">
-          <div class="role-num">01</div>
-          <div class="role-title">Media Strategy &amp; Planning</div>
-          <p class="role-body">Started my career at Grey Advertising New York and went on to running agency global, regional and domestic media operations for brands across sectors including tech, sports, entertainment, packaged goods, healthcare, financial and food &amp; beverage.</p>
-          <div class="role-positions">Director of Media Planning, Head of Media, Managing Director</div>
-        </div>
-
-        <div class="role-card fade-in">
-          <div class="role-num">02</div>
-          <div class="role-title">Advertising &amp; Creative Strategy</div>
-          <p class="role-body">I added Account Planning to my responsibilities, utilizing consumer, syndicated and quantitative methodologies to drive campaign strategy and activation. I pioneered roles integrating creative and media strategy to help reinvent how agencies delivered value.</p>
-          <div class="role-positions">Partner / Head of Strategy, EVP Strategy</div>
-        </div>
-
-        <div class="role-card fade-in">
-          <div class="role-num">03</div>
-          <div class="role-title">Brand Strategy</div>
-          <p class="role-body">My work in this area focused on integrating brand value more broadly across organizations. For brands like Microsoft and adidas, this helped unlock transformative value for their businesses. For early stage companies, aligned brand thinking has helped drive differentiation, growth and operating efficiencies at scale.</p>
-          <div class="role-positions">Chief Strategy Officer, CMO</div>
-        </div>
-
-        <div class="role-card fade-in">
-          <div class="role-num">04</div>
-          <div class="role-title">Business &amp; Operations Leadership</div>
-          <p class="role-body">I have led both independent agencies as well as operations for global networks. For Aegis, I helped start-up the office supporting 20th Century Studios. As Global CEO of IPG's BPN, I led the transformation from traditional media agency to modern communication consultancy while surpassing annual financial targets.</p>
-          <div class="role-positions">Global CEO, Co-Founder/Managing Partner, President</div>
-        </div>
-
-        <div class="role-card fade-in">
-          <div class="role-num">05</div>
-          <div class="role-title">Oversight &amp; Governance</div>
-          <p class="role-body">In a number of roles, I have been invited to participate on company boards to help drive growth. For Aegis, I was on the Global Products &amp; Services Board as we elevated the offering to become greater business partners with clients. I have also served on APAC Exec Boards for Aegis and Dataxet.</p>
-        </div>
-
-        <div class="role-card fade-in">
-          <div class="role-num">06</div>
-          <div class="role-title">Research &amp; Analytics</div>
-          <p class="role-body">Oversaw Aegis' SPI division in Asia Pacific responsible for market mix modeling. At present, as Co-founder and Managing Partner at Dataxet, I lead research and development of AI-enabled product to deliver media intelligence solutions to enterprise and government customers.</p>
-          <div class="role-positions">President/Global Head of Strategy, Chief Insight Officer</div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- GUEST LECTURER -->
+  <!-- EXECUTIVE GUEST LECTURER -->
   <section id="lecturer">
     <div class="container">
       <div class="section-label">Teaching</div>
       <h2 class="section-title">Executive Guest Lecturer</h2>
       <div class="lecturer-layout">
-        <div class="lecturer-photos fade-in">
-          <img src="guest-lecturer.png" alt="Robert Kabus at Chulalongkorn Business School" class="lecturer-photo-1" style="width:100%; height:100%; object-fit:cover; position:static; border-radius:4px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);" />
+        <div class="fade-in">
+          <img src="guest-lecturer.png" alt="Robert Kabus at Chulalongkorn Business School" class="lecturer-img" />
         </div>
         <div class="fade-in">
           <div class="lecturer-meta">Chulalongkorn Business School / Bangkok, Thailand</div>
           <div class="lecturer-subtitle">Brand Building &amp; Development Course</div>
           <p class="lecturer-body">We recently wrapped up the 2023 semester with students from the international program. It's always a pleasure sharing the enduring foundations of brand building, as well as the constantly evolving science of how marketing drives business value.</p>
-          <p class="lecturer-body" style="margin-top:1rem;">The student quality, engagement and passion makes it easy to see why Chulalongkorn is one of the world's top schools. It feels like the next generation of brand practitioners has a promising future.</p>
+          <p class="lecturer-body">The student quality, engagement and passion makes it easy to see why Chulalongkorn is one of the world's top schools. It feels like the next generation of brand practitioners has a promising future.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BELIEFS & APPROACH -->
+  <section id="beliefs">
+    <div class="container">
+      <div class="section-label">Philosophy</div>
+      <h2 class="section-title">…Beliefs &amp; Approach</h2>
+      <div class="beliefs-layout">
+        <div class="beliefs-text fade-in">
+          <h3 style="font-family:'Playfair Display',serif; font-size:1.1rem; color:var(--teal-dark); margin-bottom:1rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;">Culture</h3>
+          <p>We all live in competitive environments with no easy road to success. The difference usually comes down to a winning culture. It's the key to identifying, addressing and overcoming the inevitable challenges along the way.</p>
+          <p>Brand building is at the heart of this. The ability to create a shared sense of mission where everyone is inspired to put their individual talents towards the collective good. It might sound a bit soft, but time and time again, it's been the foundation of great work with outsized results.</p>
+          <p>I'm currently in Bangkok where we've been growing our startup across Southeast Asia. Next we'll be returning home to Sausalito, CA where our kids, community and floating home all reside.</p>
+          <a href="https://linkedin.com" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top:0.5rem;">LinkedIn ↗</a>
+        </div>
+        <div class="fade-in">
+          <img src="beliefs-approach.png" alt="Beliefs and Approach" class="beliefs-img" />
         </div>
       </div>
     </div>
@@ -818,14 +703,11 @@
   </footer>
 
   <script>
-    // Intersection Observer for fade-in
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.1 });
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
